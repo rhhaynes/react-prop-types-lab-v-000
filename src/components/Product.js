@@ -4,7 +4,11 @@ import PropTypes from 'prop-types';
 class Product extends React.Component {
   render() {
     return (
-
+      <h1>Name: {this.name}</h1>
+      <h3>Producer: {this.producer}</h3>
+      <p>Watermark: {this.hasWatermark ? "Yes" : "No"}</p>
+      <p>Color: {this.color}</p>
+      <p>Weight: {this.weight}</p>
     );
   }
 }
