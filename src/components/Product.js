@@ -18,5 +18,16 @@ Product.propTypes = {
   producer: PropTypes.string,
   hasWatermark: PropTypes.bool,
   color: PropTypes.string.oneOf(['white', 'eggshell-white', 'salmon']).isRequired,
-  weight: PropTypes.number.isRequired
+  weight: PropTypes.number.isRequired,
+  weight: function(props, propName, componentName){
+    if ( !(propName in props) ){
+      return new Error(`missing ${propName}`);
+    }
+    if ( typeof(props[propName]) !== "number") ){
+      return new Error(`propName must be a number`)
+    }
+    if ( props[propName]<80 || props[propName]>300 ){
+      return new Error(`propName must range between 80 and 300`)
+    }
+  }
 }
