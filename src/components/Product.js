@@ -18,7 +18,7 @@ Product.propTypes = {
   producer: PropTypes.string,
   hasWatermark: PropTypes.bool,
   color: PropTypes.string.oneOf(['white', 'eggshell-white', 'salmon']).isRequired,
-  weight: PropTypes.number.isRequired,
+  // weight: PropTypes.number.isRequired,
   weight: function(props, propName, componentName){
     if ( !(propName in props) ){
       return new Error(`missing ${propName}`);
